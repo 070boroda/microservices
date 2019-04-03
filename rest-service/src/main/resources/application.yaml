@@ -1,0 +1,21 @@
+server:
+  port: 8075
+
+spring:
+  application:
+    name: microservise
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring
+    username: postgres
+    password: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          temp:
+            use_jdbc_metadata_defaults: false
