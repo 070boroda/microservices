@@ -1,6 +1,7 @@
-package com.zelenko.restservice.repository;
+package com.zelenko.Repository;
 
-import com.zelenko.restservice.entity.Teacher;
+
+import com.zelenko.entity.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeacherRepository extends JpaRepository <Teacher,Integer> {

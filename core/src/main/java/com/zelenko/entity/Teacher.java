@@ -1,4 +1,4 @@
-package com.zelenko.restservice.entity;
+package com.zelenko.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;

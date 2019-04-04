@@ -1,27 +1,34 @@
 package com.zelenko.restservice.controller;
 
-import com.zelenko.restservice.entity.Teacher;
+
+import com.zelenko.Repository.TeacherRepository;
+import com.zelenko.entity.Teacher;
 import com.zelenko.restservice.exception.NotFoundException;
-import com.zelenko.restservice.repository.TeacherRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
+@Service
 @RestController
 @RequestMapping("/")
+@RequiredArgsConstructor (onConstructor = @__(@Autowired))
 public class TeacherController {
 
     @Autowired
-    TeacherRepository teacherRepository;
+    private TeacherRepository teacherRepository;
 
     @GetMapping("/teachers")
     public ResponseEntity<List<Teacher>> findAllteachers(){
         List<Teacher> teachers = teacherRepository.findAll();
+        log.info("Found list teachers");
         if(teachers.isEmpty()){
             return new ResponseEntity<>(teachers, HttpStatus.NO_CONTENT);
         }
