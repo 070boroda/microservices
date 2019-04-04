@@ -19,3 +19,12 @@ spring:
           dialect: org.hibernate.dialect.PostgreSQLDialect
           temp:
             use_jdbc_metadata_defaults: false
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8076/eureka
+  instance:
+    prefer-ip-address: true
