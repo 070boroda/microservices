@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: microservise
+    name: rest-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/spring
+    url: jdbc:postgresql://localhost:5432/auth
     username: postgres
     password: root
 
