@@ -2,8 +2,6 @@ package com.zelenko.authservice.user;
 
 import com.zelenko.Repository.ApplicationUserRepository;
 import com.zelenko.entity.ApplicationUser;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,9 @@ import java.util.Collection;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserDetailsServiceImpl implements UserDetailsService  {
 
-    private final ApplicationUserRepository applicationUserRepository;
+    @Autowired
+    private  ApplicationUserRepository applicationUserRepository;
+
 
     @Override
     public UserDetails loadUserByUsername(String username){
